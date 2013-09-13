@@ -1,6 +1,8 @@
 require 'couchrest'
 require 'dragonfly'
 
+Dragonfly::App.register_datastore(:couch){ Dragonfly::CouchDataStore }
+
 module Dragonfly
   class CouchDataStore
 

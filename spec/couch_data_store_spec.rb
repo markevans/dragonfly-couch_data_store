@@ -17,6 +17,15 @@ describe Dragonfly::CouchDataStore do
   let (:content) { Dragonfly::Content.new(app, "gollum") }
   let (:new_content) { Dragonfly::Content.new(app) }
 
+  describe "configuring the app" do
+    it "can be configured with a symbol" do
+      app.configure do
+        datastore :couch
+      end
+      app.datastore.should be_a(Dragonfly::CouchDataStore)
+    end
+  end
+
   describe "url_for" do
     it "should give the correct url" do
       @data_store.url_for('asd7fas9df/thing.txt').should == 'http://localhost:5984/dragonfly_test/asd7fas9df/thing.txt'
