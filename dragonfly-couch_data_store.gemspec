@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = Dragonfly::CouchDataStore::VERSION
   spec.authors       = ["Mark Evans"]
   spec.email         = ["mark@new-bamboo.co.uk"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
+  spec.description   = %q{Couch data store for Dragonfly}
+  spec.summary       = %q{Data store for storing content (e.g. images) handled with the Dragonfly gem in a couch database}
   spec.homepage      = ""
   spec.license       = "MIT"
 
@@ -18,6 +18,8 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
 
-  spec.add_development_dependency "bundler", "~> 1.3"
-  spec.add_development_dependency "rake"
+  spec.add_runtime_dependency "dragonfly", "~> 1.0"
+  spec.add_runtime_dependency "couchrest"
+  spec.add_development_dependency "rspec", "~> 2.0"
 end
+
