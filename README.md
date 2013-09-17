@@ -38,3 +38,14 @@ username          # not needed in 'admin party' mode
 password          # not needed in 'admin party' mode
 ```
 
+### Serving directly from Couch
+
+```ruby
+Dragonfly.app.remote_url_for('some/uid')
+```
+
+or
+
+```ruby
+my_model.attachment.remote_url
+```
