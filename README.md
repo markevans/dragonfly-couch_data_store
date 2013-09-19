@@ -1,6 +1,6 @@
 # Dragonfly::CouchDataStore
 
-Couch data store for use with the (http://github.com/markevans/dragonfly)[Dragonfly] gem.
+Couch data store for use with the [Dragonfly](http://github.com/markevans/dragonfly) gem.
 
 ## Gemfile
 
@@ -31,11 +31,11 @@ datastore :couch, username: 'potatoman', password: 'spudulike'
 ### Available options
 
 ```ruby
-host              # default 'localhost'
-port              # default 5984
-database          # default 'dragonfly'
-username          # not needed in 'admin party' mode
-password          # not needed in 'admin party' mode
+:host              # default 'localhost'
+:port              # default 5984
+:database          # default 'dragonfly'
+:username          # not needed in 'admin party' mode
+:password          # not needed in 'admin party' mode
 ```
 
 ### Serving directly from Couch
