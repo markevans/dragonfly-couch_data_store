@@ -65,17 +65,16 @@ describe Dragonfly::CouchDataStore do
 
     it "still works" do
       doc_id = store_pdf('some' => 'cool things')
-      @data_store.read(new_content, "#{doc_id}/pdf")
+      new_content.update(*@data_store.read("#{doc_id}/pdf"))
       new_content.data.should == "PDF data here"
       new_content.meta['some'].should == 'cool things'
     end
 
     it "still works when meta was stored as a marshal dumped hash (but stringifies its keys)" do
       doc_id = store_pdf(Dragonfly::Serializer.marshal_b64_encode(:some => 'shizzle'))
-      @data_store.read(new_content, "#{doc_id}/pdf")
+      new_content.update(*@data_store.read("#{doc_id}/pdf"))
       new_content.meta['some'].should == 'shizzle'
     end
   end
 
 end
-

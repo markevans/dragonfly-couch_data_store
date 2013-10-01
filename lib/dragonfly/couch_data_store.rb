@@ -29,12 +29,12 @@ module Dragonfly
       end
     end
 
-    def read(content, uid)
+    def read(uid)
       doc_id, attachment = parse_uid(uid)
       doc = db.get(doc_id)
-      content.update(doc.fetch_attachment(attachment), extract_meta(doc))
+      [doc.fetch_attachment(attachment), extract_meta(doc)]
     rescue RestClient::ResourceNotFound => e
-      throw :not_found, uid
+      nil
     end
 
     def destroy(uid)
@@ -80,4 +80,3 @@ module Dragonfly
 
   end
 end
-
