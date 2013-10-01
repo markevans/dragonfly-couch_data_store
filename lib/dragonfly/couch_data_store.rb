@@ -60,7 +60,7 @@ module Dragonfly
     private
 
     def auth
-      username.blank? ? nil : "#{username}:#{password}@"
+      username ? "#{username}:#{password}@" : nil
     end
 
     def form_uid(doc_id, attachment)
