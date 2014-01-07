@@ -10,9 +10,11 @@ gem 'dragonfly-couch_data_store'
 
 ## Usage
 
-In your dragonfly config block (with default options):
+Configuration (with default options):
 
 ```ruby
+require 'dragonfly/couch_data_store'
+
 Dragonfly.app.configure do
   # ...
 
